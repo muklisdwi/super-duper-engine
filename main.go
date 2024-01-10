@@ -1,3 +1,6 @@
+//go:generate go run github.com/swaggo/swag/cmd/swag init
+//go:generate go run github.com/google/wire/cmd/wire
+
 package main
 
 import (
@@ -19,6 +22,12 @@ func main() {
 
 	// setup log
 	log.SetLogLevel(configuration)
+
+	// initialize service
+	service := InitializeService()
+
+	// start service
+	service.SetupAndServe()
 
 	fmt.Println("First Init :D")
 }

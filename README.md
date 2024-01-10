@@ -5,3 +5,5 @@ Template Go Work Directory
 - Google Wire
 - Viper
 - Zerolog
+- Gin
+- Swagger
