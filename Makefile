@@ -11,4 +11,8 @@ build:
 generate:
 	go generate ./...
 
-.PHONY: dev run build generate
+new_migration:
+	@echo "example: migrate create -ext sql -dir db/migration -seq name=foobarbaz"
+	migrate create -ext sql -dir migrations -seq $(name)
+
+.PHONY: dev run build generate new_migration

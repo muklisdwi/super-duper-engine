@@ -1,0 +1,12 @@
+CREATE TABLE book (
+    id VARCHAR(36) NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    synopsis TEXT NULL,
+    release_at DATETIME NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT NOW(),
+    created_by VARCHAR(255) NULL,
+    updated_at DATETIME NOT NULL DEFAULT NOW() ON UPDATE NOW(),
+    updated_by VARCHAR(255) NULL,
+    PRIMARY KEY(id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
